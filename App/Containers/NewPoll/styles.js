@@ -1,16 +1,19 @@
 import {StyleSheet} from 'react-native';
 import Constants from '../../Config/Constants';
 import Colors from '../../Utils/Colors';
-import {isIphoneX} from '../../Utils/extension';
+import {getDeviceHeight, isIphoneX} from '../../Utils/extension';
 import Fonts from '../../Utils/Fonts';
-import {scale} from '../../Utils/scale';
+import {scale, scaleVertical} from '../../Utils/scale';
+
+const topBarMargin = isIphoneX() ? scaleVertical(44) : scaleVertical(24);
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
   mainWithBG: {
-    marginTop: isIphoneX() ? scale(44) : scale(24),
+    height: getDeviceHeight() - topBarMargin,
+    marginTop: topBarMargin,
     borderTopStartRadius: scale(25),
     borderTopRightRadius: scale(25),
     overflow: 'hidden',

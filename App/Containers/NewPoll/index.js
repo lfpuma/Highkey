@@ -25,7 +25,7 @@ export default class NewPollScreen extends Component {
     const {question, options} = this.state;
 
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView scrollEnabled={false} style={styles.container}>
         <View style={styles.mainWithBG}>
           <Background />
           <View style={styles.mainContainer}>

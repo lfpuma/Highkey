@@ -35,5 +35,6 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.PoppinsRegular,
     fontSize: scale(15),
     marginHorizontal: scale(20),
+    paddingVertical: 0,
   },
 });
